@@ -1,0 +1,19 @@
+version: '3.9'
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: my-mysql-container
+    environment:
+      MYSQL_ROOT_PASSWORD: your_root_password
+      MYSQL_DATABASE: week2
+      MYSQL_USER: your_username
+      MYSQL_PASSWORD: your_password
+    command: --default-authentication-plugin=mysql_native_password
+    ports:
+      - "3306:3306"  #mapping the local host with port 3306
+    volumes:
+      - ./mysql-data:/var/lib/mysql # volume for forever
+      - ./data/init.sql:/docker-entrypoint-initdb.d/init.sql #read the initial data
+      - ./data/DataSets:/var/lib/mysql-files #to output CSV file
+      - .:/code
+    

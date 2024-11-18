@@ -1,0 +1,10 @@
+# ignore related MySQL files
+mysql-data/
+*.sock
+
+# ignore the venv for Python 
+venv/
+
+# ignore other no need files
+*.pyc
+__pycache__/
