@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>ML Logistics Reg API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Loan Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+		
+
+    <label for="gender_male">Are you Male?:</label>
+        <select name="gender_male" id="gender_male">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+    <br>
+    <br>
+    <label for="married">Married?:</label>
+        <select name="married" id="married">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+    <br>
+    
+    <label for="dependents">How many Dependents?:</label>
+        <select name="dependents" id="dependents">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option> 
+            <option value="3">3+</option> 
+        </select>
+    <br>
+    
+    <label for="education">Education is graduate?:</label>
+        <select name="education" id="education">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>   
+    <br>
+    
+    <label for="self_employed">Self Employed?:</label>
+        <select name="self_employed" id="self_employed">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select> 
+    <br>
+    
+
+    <label for="applicantIncome">Applicant Income:</label>
+    <input type="text" name="applicantIncome" placeholder="eg: 2500" required="required" />
+
+    <label for="coapplicantIncome">Coapplicant Income:</label>
+    <input type="text" name="coapplicantIncome" placeholder="eg: 1500.54" required="required" />
+
+    <label for="bloanamount">Loan Amount:</label>
+    <input type="text" name="loanamount" placeholder="eg: 120.06" required="required" />
+
+    <label for="loanamountterm">Loan Amount Term:</label>
+    <input type="text" name="loanamountterm" placeholder="eg: 360, 240, 180" required="required" />
+
+    <label for="credit_history">Do you have Credit History?:</label>
+        <select name="credit_history" id="credit_history">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select> 
+    <br>
+    
+    <label for="property_area">Property Area:</label>
+        <select name="property_area" id="property_area">
+          <option value="Rural">Rural</option>
+          <option value="Semiurban">Semiurban</option>
+          <option value="Urban">Urban</option> 
+        </select> 
+    <br>
+    
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   
+   {{ prediction_text }}
+
+ </div>
+ <!--img src="/static/images/Original.svg" style="width: 400px;position: absolute;bottom: 10px;left: 10px;" alt="Company Logo"/-->
+
+</body>
+</html>
