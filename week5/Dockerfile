@@ -9,7 +9,7 @@ COPY week5/requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 
 # copy application file
-COPY . .
+COPY week5/ .
 
 # open port
 EXPOSE 5000

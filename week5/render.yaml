@@ -3,5 +3,5 @@ services:
     name: DataGlacier_UI
     env: docker
     branch: main
-    buildCommand: docker build -t your-app week5
+    buildCommand: docker build -t your-app -f week5/Dockerfile .
     startCommand: python app.py
