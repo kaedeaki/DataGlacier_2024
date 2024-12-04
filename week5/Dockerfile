@@ -5,7 +5,7 @@ FROM python:3.9-slim
 WORKDIR /app
 
 # install and copy
-COPY requirements.txt requirements.txt
+COPY week5/requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 
 # copy application file
