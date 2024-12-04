@@ -4,4 +4,4 @@ services:
     env: python
     branch: main
     buildCommand: cd week5 && pip install -r requirements.txt
-    startCommand: cd suweek5 && python app.py
+    startCommand: cd week5 && python app.py
